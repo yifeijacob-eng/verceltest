@@ -1,0 +1,28 @@
+# ============================================
+# Clash / Clash Meta 配置
+# ============================================
+# 将以下内容添加到你的 Clash 配置文件中
+
+proxies:
+  - name: "vercel-vless"
+    type: vless
+    server: your-app.vercel.app    # 替换为你的 Vercel 域名
+    port: 443
+    uuid: 12345678-1234-1234-1234-123456789abc    # 替换为你的 UUID
+    network: ws
+    tls: true
+    udp: true
+    ws-opts:
+      path: /api/vless
+      headers:
+        Host: your-app.vercel.app
+
+proxy-groups:
+  - name: "Proxy"
+    type: select
+    proxies:
+      - vercel-vless
+      - DIRECT
+
+rules:
+  - MATCH,Proxy

@@ -1,0 +1,18 @@
+# ============================================
+# Shadowrocket 配置
+# ============================================
+
+类型: Vless
+地址: your-app.vercel.app
+端口: 443
+UUID: 12345678-1234-1234-1234-123456789abc
+加密: none
+传输方式: WebSocket
+TLS: 开启
+Path: /api/vless
+Host: your-app.vercel.app
+
+# ============================================
+# 或者直接导入链接:
+# ============================================
+vless://12345678-1234-1234-1234-123456789abc@your-app.vercel.app:443?encryption=none&security=tls&type=ws&host=your-app.vercel.app&path=%2Fapi%2Fvless#vercel-vless
